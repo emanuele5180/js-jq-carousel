@@ -15,17 +15,12 @@ $(document).ready(function(){
   })
 
 
-
   $(document).keydown(function(){
-    console.log(event.which);
-    var key =event.which;
-    if (key == 39 || key == 100) {
-      nextImg();
+    tastiera();
 
-    } else if (key == 37 || key ==97 ) {
-      prevImg();
-    }
   })
+
+
 
 
 })
@@ -67,4 +62,14 @@ function prevImg(){
     iconaAttiva.prev().addClass("active");
   }
 
+}
+
+function tastiera(){
+  var key =event.which;
+  if (key == 39 || key == 100) {
+    nextImg();
+
+  } else if (key == 37 || key ==97 ) {
+    prevImg();
+  }
 }
