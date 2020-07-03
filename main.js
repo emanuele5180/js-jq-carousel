@@ -6,6 +6,7 @@ $(document).ready(function(){
   $(".next").click(function(){
     $(".images img").removeClass("active");
     console.log(".next");
+    $(".images img").next("img").addClass("active");
   })
 
 })
