@@ -4,9 +4,27 @@
 $(document).ready(function(){
 
   $(".next").click(function(){
-    $(".images img").removeClass("active");
+    var immagineAttiva = $(".images img.active");
+    var iconaAttiva = $(".nav i.active");
+    immagineAttiva.removeClass("active");
+    iconaAttiva.removeClass("active");
     console.log(".next");
-    $(".images img").next("img").addClass("active");
+
+    if (immagineAttiva.hasClass("last")) {
+      $(".images img.first").addClass("active");
+      $(".nav i.first").addClass("active");
+
+    }else{
+      immagineAttiva.next().addClass("active");
+      iconaAttiva.next().addClass("active");
+    }
+
+
   })
+
+  
+
+
+
 
 })
