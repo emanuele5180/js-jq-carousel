@@ -4,49 +4,67 @@
 $(document).ready(function(){
 
   $(".next").click(function(){
-    var immagineAttiva = $(".images img.active");
-    var iconaAttiva = $(".nav i.active");
-    immagineAttiva.removeClass("active");
-    iconaAttiva.removeClass("active");
-    console.log(".next");
-
-    if (immagineAttiva.hasClass("last")) {
-      $(".images img.first").addClass("active");
-      $(".nav i.first").addClass("active");
-
-    }else{
-      immagineAttiva.next().addClass("active");
-      iconaAttiva.next().addClass("active");
-    }
-
+    nextImg();
 
   })
 
 
   $(".prev").click(function(){
-    var immagineAttiva = $(".images img.active");
-    var iconaAttiva = $(".nav i.active");
-    immagineAttiva.removeClass("active");
-    iconaAttiva.removeClass("active");
-    //console.log(".next");
-
-    if (immagineAttiva.hasClass("first")) {
-      $(".images img.last").addClass("active");
-      $(".nav i.last").addClass("active");
-
-    }else{
-      immagineAttiva.prev().addClass("active");
-      iconaAttiva.prev().addClass("active");
-    }
-
+    prevImg();
 
   })
 
 
 
+  $(document).keydown(function(){
+    console.log(event.which);
+    var key =event.which;
+    if (key == 39 || key == 100) {
+      nextImg();
 
-
-
+    } else if (key == 37 || key ==97 ) {
+      prevImg();
+    }
+  })
 
 
 })
+
+
+//FUNCTION
+
+function nextImg(){
+  var immagineAttiva = $(".images img.active");
+  var iconaAttiva = $(".nav i.active");
+  immagineAttiva.removeClass("active");
+  iconaAttiva.removeClass("active");
+  console.log(".next");
+
+  if (immagineAttiva.hasClass("last")) {
+    $(".images img.first").addClass("active");
+    $(".nav i.first").addClass("active");
+
+  }else{
+    immagineAttiva.next().addClass("active");
+    iconaAttiva.next().addClass("active");
+  }
+
+}
+
+function prevImg(){
+  var immagineAttiva = $(".images img.active");
+  var iconaAttiva = $(".nav i.active");
+  immagineAttiva.removeClass("active");
+  iconaAttiva.removeClass("active");
+  //console.log(".next");
+
+  if (immagineAttiva.hasClass("first")) {
+    $(".images img.last").addClass("active");
+    $(".nav i.last").addClass("active");
+
+  }else{
+    immagineAttiva.prev().addClass("active");
+    iconaAttiva.prev().addClass("active");
+  }
+
+}
