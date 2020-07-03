@@ -22,7 +22,29 @@ $(document).ready(function(){
 
   })
 
-  
+
+  $(".prev").click(function(){
+    var immagineAttiva = $(".images img.active");
+    var iconaAttiva = $(".nav i.active");
+    immagineAttiva.removeClass("active");
+    iconaAttiva.removeClass("active");
+    //console.log(".next");
+
+    if (immagineAttiva.hasClass("first")) {
+      $(".images img.last").addClass("active");
+      $(".nav i.last").addClass("active");
+
+    }else{
+      immagineAttiva.prev().addClass("active");
+      iconaAttiva.prev().addClass("active");
+    }
+
+
+  })
+
+
+
+
 
 
 
