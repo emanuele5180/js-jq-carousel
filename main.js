@@ -20,6 +20,26 @@ $(document).ready(function(){
 
   })
 
+  $(".nav i").click(function(){
+    var immagineAttiva = $(".images img.active");
+    var iconaAttiva = $(".nav i.active");
+    $(this).addClass("active");
+    $(iconaAttiva).removeClass("active");
+
+
+
+    // if (iconaAttiva) {
+    //   $(this).removeClass("active");
+    //
+    // }
+    // if ("!.nav i"){
+    //   $(this).addClass("active");
+    // }
+
+
+
+  })
+
 
 
 
@@ -40,7 +60,7 @@ function nextImg(){
     $(".nav i.first").addClass("active");
 
   }else{
-    immagineAttiva.next().addClass("active");
+    imm7agineAttiva.next().addClass("active");
     iconaAttiva.next().addClass("active");
   }
 
