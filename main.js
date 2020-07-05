@@ -23,8 +23,12 @@ $(document).ready(function(){
   $(".nav i").click(function(){
     var immagineAttiva = $(".images img.active");
     var iconaAttiva = $(".nav i.active");
+    //var iconaAttiva = immagineAttiva;
+
     $(this).addClass("active");
+    //$(immagineAttiva).removeClass("active");
     $(iconaAttiva).removeClass("active");
+    //$(immagineAttiva).slick();
 
 
 
